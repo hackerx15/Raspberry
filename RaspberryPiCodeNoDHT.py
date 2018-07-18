@@ -61,7 +61,7 @@ def get_target_temp():
 def heating():
     if 18 > current_temp:
         print("Turn heating on")
-    else if target_temp <  current_temp:
+    elif target_temp <  current_temp:
         print("Turn heating on")
     else:
         ("Turn heating off")
