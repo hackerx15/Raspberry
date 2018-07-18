@@ -1,18 +1,18 @@
 
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO    Not required for non-DHT code
 from time import sleep
 import datetime
 from firebase import firebase
-import Adafruit_DHT
+#import Adafruit_DHT       Not required for non-DHT code
 
 import urllib2, urllib, httplib
 import json
 import os 
 from functools import partial
 
-GPIO.setmode(GPIO.BCM)
-GPIO.cleanup()
-GPIO.setwarnings(False)
+#GPIO.setmode(GPIO.BCM)     *Creates issue if DHT not avaliable at pin*
+#GPIO.cleanup()
+#GPIO.setwarnings(False)
 
 # Sensor should be set to Adafruit_DHT.DHT11,
 # Adafruit_DHT.DHT22, or Adafruit_DHT.AM2302.
@@ -20,14 +20,14 @@ GPIO.setwarnings(False)
 
 # Example using a Beaglebone Black with DHT sensor
 # connected to pin P8_11.
-pin = 4
+#pin = 4
 
 # Try to grab a sensor reading. Use the read_retry method which will retry up
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
 #humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
 
-firebase = firebase.FirebaseApplication('https://YOUR_FIREBASE_URL.firebaseio.com/', None)
+firebase = firebase.FirebaseApplication(https://energyautomationcontrol.firebaseio.com/', None)
 #firebase.put("/dht", "/temp", "0.00")
 #firebase.put("/dht", "/humidity", "0.00")
 
